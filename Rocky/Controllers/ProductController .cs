@@ -128,15 +128,7 @@ namespace Rocky.Controllers
             }
             return View();
         }
-        public IActionResult Details(int? id)
-        {
-            DetailsVM detailsVM = new DetailsVM()
-            {
-                Product = _db.Product.Include(u => u.Category).Include(u => u.ApplicationType).Where(u => u.Id == id).FirstOrDefault(),
-                ExistsInCart = false
-            };
-            return View(detailsVM);
-        }
+ 
         //GET - Delete
         public IActionResult Delete(int? id)
         {
